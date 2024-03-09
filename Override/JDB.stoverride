@@ -1,0 +1,26 @@
+name: "JavDB"
+desc: "Cannot describe"
+author: "Mashiro3"
+# icon: "https://raw.githubusercontent.com/itsCheney/StashConfig/main/Icons/CaiYunWeather.png"
+category: "Mashiro3"
+
+http:
+  mitm:
+    - "api.hechuangxinxi.xyz"
+  script:
+    - match: ^https?:\/\/api\.hechuangxinxi\.xyz\/api\/v\d\/(users|startup|ads)
+      name: JavDB1
+      type: response
+      require-body: true
+      timeout: 10
+    - match: ^https?:\/\/api\.hechuangxinxi\.xyz\/api\/v\d\/(movies\/.*\/play|startup)
+      name: JavDB1
+      type: request
+      require-body: false
+      timeout: 10
+
+script-providers:
+  JavDB1:
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/JavDB.js
+    interval: 86400
+

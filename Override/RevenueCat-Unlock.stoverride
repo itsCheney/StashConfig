@@ -1,0 +1,26 @@
+name: "RevenueCat-Unlock"
+desc: "Unlock most of RevenueCat-supported IAP"
+author: "Mashiro3"
+# icon: "https://raw.githubusercontent.com/itsCheney/StashConfig/main/Icons/CaiYunWeather.png"
+category: "Mashiro3"
+
+http:
+  mitm:
+    - "api.revenuecat.com"
+  script:
+    # api.Revenuecat.com-解锁合集
+    - match: ^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$)
+      name: Reheji
+      type: response
+      require-body: true
+      timeout: 10
+    - match: ^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$)
+      name: Reheji
+      type: request
+      require-body: false
+      timeout: 10
+
+script-providers:
+  Reheji:
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js
+    interval: 86400
