@@ -19,7 +19,7 @@ http:
     - match: ^http[s]?:\/\/(api|wrapper)\.(cyapi|caiyunapp)\.(cn|com)\/v\d\/(satellite|nafp\/origin_images)
       name: CaiYunSVIP2
       type: request
-      require-body: true
+      require-body: false
       timeout: 10
   rewrite:
     - ^https:\/\/ad\.caiyunapp\.com\/ - reject
