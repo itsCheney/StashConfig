@@ -1,0 +1,33 @@
+name: "CaiYunWeatherSVIP"
+desc: "Unlock full CaiYunWeather"
+author: "Mashiro3"
+icon: "https://raw.githubusercontent.com/itsCheney/StashConfig/main/Icons/CaiYunWeather.png"
+category: "Mashiro3"
+
+http:
+  mitm:
+    - "*.caiyunapp.com"
+    - "*.cyapi.com"
+    - "*.cyapi.cn"
+    - "*.caiyunapp.cn"
+  script:
+    - match: ^http[s]?:\/\/(biz|wrapper|starplucker)\.(cyapi|caiyunapp)\.(cn|com)\/(.+\/(user\?app_name|activity\?app_name|visitors|operation\/banners|ai\/weather\/quotas|operation\/homefeatures)|p\/v\d\/(vip_info|user_info|entries|privileges))
+      name: CaiYunSVIP1
+      type: response
+      require-body: true
+      timeout: 10
+    - match: ^http[s]?:\/\/(api|wrapper)\.(cyapi|caiyunapp)\.(cn|com)\/v\d\/(satellite|nafp\/origin_images)
+      name: CaiYunSVIP2
+      type: request
+      require-body: true
+      timeout: 10
+  rewrite:
+    - ^https:\/\/ad\.caiyunapp\.com\/ - reject
+
+script-providers:
+  CaiYunSVIP1:
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/caiyuntianqi.js
+    interval: 86400
+  CaiYunSVIP2:
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/caiyuntianqi.js
+    interval: 86400
