@@ -500,13 +500,6 @@ rule-providers:
     interval: 86400
     url: https://ruleset.skk.moe/Clash/domainset/speedtest.txt
     path: ./ruleset/SpeedTest.list
-  Brokers:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    url: https://cdn.jsdmirror.com/gh/itsCheney/StashConfig/RuleSet/Brokers.list
-    path: ./ruleset/Brokers.list
   Paga:
     type: http
     behavior: classical
@@ -521,6 +514,13 @@ rule-providers:
     interval: 86400
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/WeChat/WeChat.list
     path: ./ruleset/WeChat.list
+  Brokers:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://cdn.jsdmirror.com/gh/itsCheney/StashConfig/RuleSet/Brokers.list
+    path: ./ruleset/Brokers.list
   HKBank:
     type: http
     behavior: classical
@@ -632,4 +632,3 @@ geox-url:
   geosite: https://cdn.jsdmirror.com/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat
   mmdb: https://cdn.jsdmirror.com/gh/Loyalsoldier/geoip@release/Country.mmdb
   asn: https://cdn.jsdmirror.com/gh/Loyalsoldier/geoip@release/GeoLite2-ASN.mmdb
-
