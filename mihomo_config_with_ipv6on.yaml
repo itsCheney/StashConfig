@@ -521,7 +521,7 @@ rule-providers:
     interval: 86400
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/WeChat/WeChat.list
     path: ./ruleset/WeChat.list
- HKBank:
+  HKBank:
     type: http
     behavior: classical
     format: text
