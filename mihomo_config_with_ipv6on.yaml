@@ -500,13 +500,13 @@ rule-providers:
     interval: 86400
     url: https://ruleset.skk.moe/Clash/domainset/speedtest.txt
     path: ./ruleset/SpeedTest.list
-  Stocks:
+  Brokers:
     type: http
     behavior: classical
     format: text
     interval: 86400
-    url: https://cdn.jsdmirror.com/gh/koo17173/rule-set@master/Stocks.list
-    path: ./ruleset/Stocks.list
+    url: https://cdn.jsdmirror.com/gh/itsCheney/StashConfig/RuleSet/Brokers.list
+    path: ./ruleset/Brokers.list
   Paga:
     type: http
     behavior: classical
@@ -521,9 +521,17 @@ rule-providers:
     interval: 86400
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/WeChat/WeChat.list
     path: ./ruleset/WeChat.list
+ HKBank:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://cdn.jsdmirror.com/gh/itsCheney/StashConfig/RuleSet/HKBank.list
+    path: ./ruleset/HKBank.list
 rules:
   - DOMAIN,upos-hz-mirrorakam.akamaized.net,全球直连
   - RULE-SET,Paga,尼日利亚节点
+  - RULE-SET,HKBank,全球直连
   - RULE-SET,WeChat,全球直连
   - RULE-SET,ADBlock,广告拦截
   - RULE-SET,AdditionalFilter,广告拦截
@@ -538,7 +546,7 @@ rules:
   - RULE-SET,GoogleFCM,FCM推送
   - RULE-SET,Weibo,新浪微博
   - RULE-SET,SpeedTest,测速服务
-  - RULE-SET,Stocks,全球直连
+  - RULE-SET,Brokers,全球直连
   - DOMAIN,services.googleapis.cn,Play商店修复
   - GEOSITE,paypal@cn,全球直连
   - GEOSITE,paypal,PayPal
