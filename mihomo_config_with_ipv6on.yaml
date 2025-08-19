@@ -604,6 +604,7 @@ sniffer:
     - Mijia Cloud
     - dlg.io.mi.com
     - +.push.apple.com
+log-level: error
 dns:
   enable: true
   ipv6: true
