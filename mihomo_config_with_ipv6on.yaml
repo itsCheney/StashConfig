@@ -214,11 +214,7 @@ proxy-groups:
     icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png
     include-all: true
     filter: (?i)^(?!.*游戏).*(香港|港|\bHK\b|Hong\s?Kong|HongKong|hongkong).*
-    type: url-test
-    url: https://cp.cloudflare.com/generate_204
-    interval: 180
-    tolerance: 20
-    lazy: false
+    type: select
   - name: 澳门节点
     icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Macao.png
     include-all: true
@@ -237,20 +233,12 @@ proxy-groups:
     icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/United_States.png
     include-all: true
     filter: (?i)^(?!.*家宽).*(美国|US|United States)
-    type: url-test
-    url: https://cp.cloudflare.com/generate_204
-    interval: 180
-    tolerance: 20
-    lazy: false
+    type: select
   - name: 英国节点
     icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/United_Kingdom.png
     include-all: true
     filter: (?i)英国|United Kingdom|UK|伦敦|London
-    type: url-test
-    url: https://cp.cloudflare.com/generate_204
-    interval: 180
-    tolerance: 20
-    lazy: false
+    type: select
   - name: 日本节点
     icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Japan.png
     include-all: true
@@ -264,46 +252,27 @@ proxy-groups:
     icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Korea.png
     include-all: true
     filter: (?i)KR|Korea|KOR|首尔|韩|韓
-    type: url-test
-    url: https://cp.cloudflare.com/generate_204
-    interval: 180
-    tolerance: 20
-    lazy: false
+    type: select
   - name: 新加坡节点
     icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Singapore.png
     include-all: true
     filter: (?i)新加坡|坡|狮城|SG|Singapore
-    type: url-test
-    url: https://cp.cloudflare.com/generate_204
-    interval: 180
-    tolerance: 20
-    lazy: false
+    type: select
   - name: 德国节点
     icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Germany.png
     include-all: true
     filter: (?i)德国|DE|Germany
-    type: url-test
-    url: https://cp.cloudflare.com/generate_204
-    interval: 180
-    tolerance: 20
-    lazy: false
+    type: select
   - name: 法国节点
     icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/France.png
     include-all: true
     filter: (?i)法国|FR|France
-    type: url-test
-    url: https://cp.cloudflare.com/generate_204
-    interval: 180
-    tolerance: 20
-    lazy: false
+    type: select
   - name: 加拿大节点
     icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Canada.png
     include-all: true
     filter: (?i)加拿大|Canada|CA
-    type: url-test
-    url: https://cp.cloudflare.com/generate_204
-    interval: 180
-    tolerance: 20
+    type: select
   - name: 尼日利亚节点
     icon: https://www.emojiall.com/images/240/twitter/twemoji-15.0.1/1f1f3-1f1ec.png
     include-all: true
@@ -319,18 +288,12 @@ proxy-groups:
     filter: (?i)(?=.*(?:美国|US|United States))(?=.*家宽)
     type: select
     url: https://cp.cloudflare.com/generate_204
-    interval: 180
-    tolerance: 20
-    lazy: false
   - name: 日本家宽
     icon: https://cdn.jsdelivr.net/gh/itsCheney/StashConfig/Icons/Japan-resident.png
     include-all: true
     filter: (?i)(?=.*(?:日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan))(?=.*(?:家宽|星链|starlink|5G))(?!.*游戏)
     type: select
     url: https://cp.cloudflare.com/generate_204
-    interval: 180
-    tolerance: 20
-    lazy: false
   - name: 家宽节点
     icon: https://cdn.jsdelivr.net/gh/itsCheney/StashConfig/Icons/Resident.png
     include-all: true
