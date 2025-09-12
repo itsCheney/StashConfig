@@ -508,6 +508,7 @@ rules:
   - RULE-SET,SpeedTest,测速服务
   - RULE-SET,Brokers,全球直连
   - DOMAIN,services.googleapis.cn,全球直连
+  - GEOSITE,bing,Bing
   - GEOSITE,paypal@cn,全球直连
   - GEOSITE,paypal,PayPal
   - GEOSITE,google-play@cn,全球直连
