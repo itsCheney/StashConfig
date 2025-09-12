@@ -479,8 +479,16 @@ rule-providers:
     interval: 86400
     url: https://cdn.jsdelivr.net/gh/itsCheney/StashConfig/RuleSet/USCarrier.list
     path: ./ruleset/USCarrier.list
+  RejectHTTPDNS:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://cdn.jsdelivr.net/gh/itsCheney/StashConfig/RuleSet/NOHTTPDNS.list
+    path: ./ruleset/NOHTTPDNS.list
 rules:
   - DOMAIN,upos-hz-mirrorakam.akamaized.net,全球直连
+  - RULE-SET,RejectHTTPDNS,REJECT
   - RULE-SET,USCarrier,美国家宽
   - RULE-SET,Paga,尼日利亚节点
   - RULE-SET,HKBank,全球直连
