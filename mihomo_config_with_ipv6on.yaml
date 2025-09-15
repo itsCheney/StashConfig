@@ -486,6 +486,13 @@ rule-providers:
     interval: 86400
     url: https://cdn.jsdelivr.net/gh/itsCheney/StashConfig/RuleSet/NOHTTPDNS.list
     path: ./ruleset/NOHTTPDNS.list
+  bilibili:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://cdn.jsdelivr.net/gh/itsCheney/StashConfig/RuleSet/Bilibili.list
+    path: ./ruleset/Bilibili.list
 rules:
   - DOMAIN,upos-hz-mirrorakam.akamaized.net,全球直连
   - RULE-SET,RejectHTTPDNS,REJECT
@@ -507,6 +514,7 @@ rules:
   - RULE-SET,Weibo,新浪微博
   - RULE-SET,SpeedTest,测速服务
   - RULE-SET,Brokers,全球直连
+  - RULE-SET,bilibili,哔哩哔哩
   - DOMAIN,services.googleapis.cn,全球直连
   - GEOSITE,duolingo,节点选择
   - GEOSITE,bing,Bing
@@ -523,7 +531,6 @@ rules:
   - GEOSITE,spotify,Spotify
   - GEOSITE,twitter,Twitter(X)
   - GEOSITE,bahamut,巴哈姆特
-  - GEOSITE,bilibili,哔哩哔哩
   - GEOSITE,category-dev,开发者资源
   - GEOSITE,category-porn,瑟琴网站
   - GEOSITE,category-games@cn,全球直连
