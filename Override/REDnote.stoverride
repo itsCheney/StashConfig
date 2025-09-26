@@ -1,0 +1,123 @@
+name: '🧰 小红书去广告'
+desc: |-
+  过滤信息流推广，移除笔记和评论区图片视频以及 live 图水印。
+  移除评论区表情包水印和下载限制。如有异常，请先清除缓存再尝试。
+openUrl: ''
+author: |-
+  Mashiro3
+homepage: 'https://github.com/mist-whisper/Script'
+icon: ''
+category: 'Mashiro3'
+date: '2025-07-31 16:37:00'
+version: '1.0.0'
+
+# —— 分流（域名级拦截），对应：HOST, xxx, REJECT ——
+rules:
+  - DOMAIN,ads-img-qc.xhscdn.com,REJECT
+  - DOMAIN,ads-video-al.xhscdn.com,REJECT
+  - DOMAIN,ads-video-qc.xhscdn.com,REJECT
+  - DOMAIN,t-ads.xiaohongshu.com,REJECT
+
+http:
+  # 建议强制走 HTTP 引擎，确保重写/脚本命中
+  force-http-engine:
+    - 'edith.xiaohongshu.com:443'
+    - 'www.xiaohongshu.com:443'
+    - 'ci.xiaohongshu.com:443'
+    - 'rec.xiaohongshu.com:443'
+
+  # 开启 MitM 的域名（脚本/重写需要）
+  mitm:
+    - 'edith.xiaohongshu.com'
+    - 'www.xiaohongshu.com'
+    - 'ci.xiaohongshu.com'
+    - 'rec.xiaohongshu.com'
+
+  # —— URL 重写（拒绝/空响应等），对应：url reject-* / reject-img / reject-dict ——
+  url-rewrite:
+    # 惊喜弹窗
+    - ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/surprisebox\/(get_style|open|submit_action) - reject-dict
+    - ^https?:\/\/www\.xiaohongshu\.com\/api\/marketing\/box\/trigger\? - reject-dict
+
+    # 信息流广告与引导
+    - ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/guide\? - reject-dict
+    - ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/guide\/user_banner - reject-dict
+    - ^https?:\/\/www\.xiaohongshu\.com\/api\/sns\/(v\d\/ads\/resource|v\d\/hey\/\w+\/hey_gallery) - reject-dict
+
+    # 评论区图片水印配置（直接返回 1px 图）
+    - ^https?:\/\/ci\.xiaohongshu\.com\/system_config\/watermark - reject-img
+
+  # —— 脚本改写，对应：script-response-body —— 
+  script:
+   # id置空
+    - match: ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/comment\/list
+      name: 'REDnote-comment-replace'
+      type: response
+      require-body: true
+      timeout: 10
+      argument: pattern=red_id&replace=fmz200
+    # 搜索页
+    - match: ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/(banner_list|hot_list)
+      name: 'REDnote.remove_ads'
+      type: response
+      require-body: true
+    - match: ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/(hint|trending)\?
+      name: 'REDnote.remove_ads'
+      type: response
+      require-body: true
+    - match: ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/notes\?
+      name: 'REDnote.remove_ads'
+      type: response
+      require-body: true
+
+    # 开屏广告
+    - match: ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/system_service\/config\?
+      name: 'REDnote.remove_ads'
+      type: response
+      require-body: true
+    - match: ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/system_service\/splash_config
+      name: 'REDnote.remove_ads'
+      type: response
+      require-body: true
+
+    # 详情页小部件
+    - match: ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/widgets
+      name: 'REDnote.remove_ads'
+      type: response
+      require-body: true
+
+    # 图片/视频水印与时间线信息流
+    - match: ^https?:\/\/(edith|rec|www)\.xiaohongshu\.com\/api\/sns\/v\d\/note\/(imagefeed|live_photo\/save)
+      name: 'REDnote.remove_ads'
+      type: response
+      require-body: true
+    - match: ^https?:\/\/(edith|rec|www)\.xiaohongshu\.com\/api\/sns\/v\d\/(followfeed|homefeed)\?
+      name: 'REDnote.remove_ads'
+      type: response
+      require-body: true
+    - match: ^https?:\/\/(edith|rec|www)\.xiaohongshu\.com\/api\/sns\/(v2\/note\/feed|v3\/note\/videofeed)\?
+      name: 'REDnote.remove_ads'
+      type: response
+      require-body: true
+    - match: ^https?:\/\/(edith|rec|www)\.xiaohongshu\.com\/api\/sns\/(v4\/note\/videofeed|v10\/note\/video\/save)\?
+      name: 'REDnote.remove_ads'
+      type: response
+      require-body: true
+
+    # 评论区图片、live 图水印 & 表情包下载
+    - match: ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(v5\/note\/comment\/list|v3\/note\/comment\/sub_comments)\?
+      name: 'REDnote.remove_ads'
+      type: response
+      require-body: true
+    - match: ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/interaction\/comment\/video\/download\?
+      name: 'REDnote.remove_ads'
+      type: response
+      require-body: true
+
+script-providers:
+  'REDnote.remove_ads':
+    url: https://raw.githubusercontent.com/mist-whisper/Script/master/REDnote/REDnote_remove_ads.js
+    interval: 86400
+  'REDnote-comment-replace':
+    url: https://cdn.jsdelivr.net/gh/itsCheney/StashConfig/JavaScript/REDnote-comment-replace.js
+    interval: 86400
