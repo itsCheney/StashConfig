@@ -35,7 +35,7 @@ jobs:
         env:
           # 将环境变量的值设置为矩阵中当前的URL
           CLASH_DOMAINS_URL: ${{ matrix.url }}
-        run: python convert.py
+        run: python ClashRulesConverter.py
 
       # 注意：因为每个任务是独立运行的，所以提交步骤也需要包含在任务内。
       # 这意味着每个URL的规则更新会触发一次单独的提交。
