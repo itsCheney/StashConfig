@@ -1,0 +1,12 @@
+#!name = JMComic去广告
+#!desc = JMComic去广告
+#!icon = https://raw.githubusercontent.com/qsoyq/icons/main/assets/icon/18comic.png
+#!author = Mashiro3
+#!tag = 去广告
+
+
+[Script]
+http-response ^https?://(18comic.vip|jmcomic-zzz.one|18comic.ink)(/$|/theme/$|/search/photos|/albums|/album/\d+/|/photo/\d+) script-path = https://raw.githubusercontent.com/qsoyq/stash/main/script/ad/18comic.js, timeout = 20, requires-body = true, tag = 18Comic去广告
+
+[MITM]
+hostname = 18comic.vip, jmcomic-zzz.one, 18comic.ink
