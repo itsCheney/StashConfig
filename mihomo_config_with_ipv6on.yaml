@@ -573,35 +573,38 @@ sniffer:
     - Mijia Cloud
     - dlg.io.mi.com
     - +.push.apple.com
-log-level: error
 dns:
   enable: true
-  ipv6: true
+  ipv6: false
   prefer-h3: true
-  enhanced-mode: redir-host
+  enhanced-mode: fake-ip
+  fake-ip-filter:
+    - geosite:private
+    - geosite:connectivity-check
+    - geosite:cn
+    - Mijia Cloud
+    - dig.io.mi.com
+    - localhost.ptlogin2.qq.com
+    - "*.icloud.com"
+    - "*.stun.*.*"
+    - "*.stun.*.*.*"
   default-nameserver:
     - 119.29.29.29
     - 223.5.5.5
-    - 114.114.114.114
   nameserver:
     - system
-    - tls://dot.pub
-    - tls://dns.alidns.com
-    - quic://223.5.5.5
+    - 223.5.5.5
+    - 119.29.29.29
+    - 180.184.1.1
   fallback:
+    - quic://dns0.eu
     - https://dns.cloudflare.com/dns-query
     - https://dns.sb/dns-query
     - tcp://208.67.222.222
     - tcp://8.26.56.2
-    - quic://dns0.eu
-  fallback-filter:
-    geoip: true
-    geoip-code: CN
-    ipcidr:
-      - 240.0.0.0/4
   proxy-server-nameserver:
-    - tls://dot.pub
     - quic://223.5.5.5
+    - tls://dot.pub
 geodata-mode: true
 geox-url:
   geoip: https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat
