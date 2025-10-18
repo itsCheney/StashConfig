@@ -3,8 +3,8 @@ name: Convert Clash CDN Domain Rules from URL
 on:
   push:
     branches:
-      - main # 只在 main 分支上触发
-  workflow_dispatch: # 允许在 Actions 页面手动触发
+      - main
+  workflow_dispatch:
   schedule:
     - cron: '0 3 * * *'
 
@@ -24,21 +24,25 @@ jobs:
         run: pip install requests
 
       - name: Run rule conversion script
-        # 使用 env 设置环境变量
         env:
           CLASH_DOMAINS_URL: 'https://ruleset.skk.moe/Clash/domainset/cdn.txt'
         run: python convert.py
 
+      # 步骤 5: 提交生成的文件
       - name: Commit and push if changed
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add CDN_rules.txt
           
-          # 检查是否有文件变动，如果没有变动则不执行提交
+          # 将 git add 的路径更新为你在 Python 脚本中定义的路径
+          git add ConvertedRules/CDN.txt
+          
+          # 检查是否有文件变动
           if [ -z "$(git status --porcelain)" ]; then
             echo "规则无变化，无需提交。"
           else
-            git commit -m "docs(rules): Update Rules from URL"
+            # 清理旧文件（如果存在）
+            git rm --cached merged_rules.txt > /dev/null 2>&1 || true
+            git commit -m "docs(rules): 自动更新域名规则并存放至指定目录"
             git push
           fi
