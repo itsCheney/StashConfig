@@ -1,0 +1,175 @@
+#default configure
+#Update Date: 2021.02.19 22:34:05 +0000
+#author: Loon
+
+[General]
+ip-mode = v4-only
+ipv6-vif = off
+dns-server = system
+sni-sniffing = true
+disable-stun = false
+dns-reject-mode = LoopbackIP
+domain-reject-mode = DNS
+udp-fallback-mode = REJECT
+wifi-access-http-port = 7222
+wifi-access-socks5-port = 7221
+allow-wifi-access = false
+interface-mode = auto
+test-timeout = 5
+disconnect-on-policy-change = false
+internet-test-url = http://connectivitycheck.platform.hicloud.com/generate_204
+proxy-test-url = http://www.gstatic.com/generate_204
+resource-parser = https://raw.githubusercontent.com/sub-store-org/Sub-Store/release/sub-store-parser.loon.min.js
+geoip-url = https://geodata.kelee.one/Country-Masaiki.mmdb
+ipasn-url = https://geodata.kelee.one/GeoLite2-ASN-P3TERX.mmdb
+skip-proxy = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, localhost, *.local, e.crashlynatics.com
+bypass-tun = 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/12, 192.0.0.0/24, 192.0.2.0/24, 192.88.99.0/24, 192.168.0.0/16, 198.51.100.0/24, 203.0.113.0/24, 224.0.0.0/4, 255.255.255.255/32
+
+
+[Remote Proxy]
+# 订阅节点
+# 别名 = 订阅URL
+Subs = https://example/server-complete.txt
+
+[Remote Filter]
+# 筛选订阅节点，筛选后的结果可加入到策略组中，目前支持三种筛选方式
+# NodeSelect: 使用在UI上选择的节点。
+# NameKeyword: 根据提供的关键词对订阅中所有节点的名称进行筛选，使用筛选后的节点。
+# NameRegex: 根据提供的正则表达式对订阅中所有节点的名称进行筛选，使用筛选后的节点。
+香港节点 = NameRegex, FilterKey = "(?i)^(?!.*游戏).*(香港|港|\bHK\b|Hong\s?Kong|HongKong|hongkong).*"
+澳门节点 = NameRegex, FilterKey = "(?i)澳门|MO|Macau"
+台湾节点 = NameRegex, FilterKey = "(?i)台|新北|彰化|TW|Taiwan"
+美国节点 = NameRegex, FilterKey = "(?i)^(?!.*家宽).*(美国|US|United States)"
+英国节点 = NameRegex, FilterKey = "(?i)英国|United Kingdom|UK|伦敦|London"
+日本节点 = NameRegex, FilterKey = "(?i)^(?!.*(?:家宽|游戏|星链|starlink|5G)).*(?:日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan)"
+韩国节点 = NameRegex, FilterKey = "(?i)KR|Korea|KOR|首尔|韩|韓"
+新加坡节点 = NameRegex, FilterKey = "(?i)新加坡|坡|狮城|SG|Singapore"
+德国节点 = NameRegex, FilterKey = "(?i)德国|DE|Germany"
+法国节点 = NameRegex, FilterKey = "(?i)法国|FR|France"
+加拿大节点 = NameRegex, FilterKey = "(?i)加拿大|Canada|CA"
+尼日利亚节点 = NameRegex, FilterKey = "(?i)尼日利亚|NG|Nigeria"
+美国家宽 = NameRegex, FilterKey = "(?i)(?=.*(?:美国|US|United States))(?=.*家宽)"
+日本家宽 = NameRegex, FilterKey = "(?i)(?=.*(?:日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan))(?=.*(?:家宽|星链|starlink|5G))(?!.*游戏)"
+家宽节点 = NameRegex, FilterKey = "(?i)(?=.*(?:家宽|星链|住宅|starlink|5G))(?!.*游戏)"
+
+[Proxy Group]
+# 节点选项
+Proxy = Select1, Select2, 🇭🇰HK, 🇲🇴MO, 🇹🇼TW, 🇺🇸US, 🇬🇧UK, 🇯🇵JP, 🇰🇷KR, 🇸🇬SG, 🇩🇪DE, 🇫🇷FR, 🇨🇦CA, 🇳🇬NG, 🇺🇸US-R, 🇯🇵JP-R, 🏠RES, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Proxy.png
+Select1 = select, Subs, img-url = https://cdn.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/select.png
+Select2 = select, 🇭🇰HK, 🇲🇴MO, 🇹🇼TW, 🇺🇸US, 🇬🇧UK, 🇯🇵JP, 🇰🇷KR, 🇸🇬SG, 🇩🇪DE, 🇫🇷FR, 🇨🇦CA, 🇳🇬NG, 🇺🇸US-R, 🇯🇵JP-R, 🏠RES, img-url = https://cdn.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/select.png
+AI = 🇺🇸US-R, 🇯🇵JP-R, 🏠RES, DIRECT, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Bot.png
+Crypto = select, Proxy, Select1, Select2, DIRECT, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Cryptocurrency_3.png
+Telegram = select, Proxy, 🇸🇬SG, 🇺🇸US, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Telegram.png
+Microsoft = select, Proxy, Select1, Select2, DIRECT, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Microsoft.png
+Bing = select, Proxy, 🇹🇼TW, 🇺🇸US, 🇯🇵JP-R, DIRECT, img-url = https://cdn.jsdelivr.net/gh/itsCheney/StashConfig/Icons/Bing.png
+Apple = select, Proxy, DIRECT, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Apple_2.png
+Google = select, Proxy, Select1, Select2, DIRECT, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Google_Search.png
+YouTube = select, Proxy, Select1, Select2, 🇳🇬NG, DIRECT, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/YouTube.png
+Netflix = select, Proxy, 🇹🇼TW, 🇸🇬SG, 🇯🇵JP, 🇳🇬NG, DIRECT, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Netflix.png
+Spotify = select, Proxy, 🇹🇼TW, 🇸🇬SG, 🇯🇵JP, 🇳🇬NG, DIRECT, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Spotify.png
+E-Hentai = select, Proxy, 🇹🇼TW, 🇺🇸US, 🇸🇬SG, DIRECT, img-url = https://cdn.jsdelivr.net/gh/powerfullz/override-rules@master/icons/Ehentai.png
+PikPak = select, Proxy, Select1, Select2, DIRECT, img-url = https://cdn.jsdelivr.net/gh/powerfullz/override-rules@master/icons/PikPak.png
+Bahamut = select, 🇭🇰HK, 🇹🇼TW, DIRECT, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Bahamut.png
+Bilibili = select, 🇭🇰HK, 🇲🇴MO, 🇹🇼TW, Select1, Select2, DIRECT, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/bilibili.png
+Twitter = select, Proxy, Select1, Select2, DIRECT, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Twitter.png
+AcademicResource = select, Proxy, Select1, Select2, DIRECT, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Scholar.png
+DeveloperResource = select, Proxy, Select1, Select2, DIRECT, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/GitHub.png
+PornSite = select, Proxy, Select1, Select2, DIRECT, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Pornhub.png
+GamePlatform = select, Proxy, Select1, Select2, DIRECT, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Game.png
+SpeedTest = select, Proxy, 🇭🇰HK, Select2, DIRECT, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Speedtest.png
+SSH = select, Proxy, Select1, Select2, DIRECT, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Server.png
+Advertising = select, REJECT, DIRECT, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/AdBlack.png
+🇭🇰HK = select, 香港节点, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png
+🇲🇴MO = url-test, 澳门节点, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Macao.png
+🇹🇼TW = select, 台湾节点, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Taiwan.png
+🇺🇸US = select, 美国节点, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/United_States.png
+🇬🇧UK = select, 英国节点, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/United_Kingdom.png
+🇯🇵JP = url-test, 日本节点, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Japan.png
+🇰🇷KR = select, 韩国节点, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Korea.png
+🇸🇬SG = select, 新加坡节点, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Singapore.png
+🇩🇪DE = select, 德国节点, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Germany.png
+🇫🇷FR = select, 法国节点, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/France.png
+🇨🇦CA = select, 加拿大节点, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Canada.png
+🇳🇬NG = url-test, 尼日利亚节点, img-url = https://www.emojiall.com/images/240/twitter/twemoji-15.0.1/1f1f3-1f1ec.png
+🇺🇸US-R = select, 美国家宽, img-url = https://cdn.jsdelivr.net/gh/itsCheney/StashConfig/Icons/United_States-resident.png
+🇯🇵JP-R = select, 日本家宽, img-url = https://cdn.jsdelivr.net/gh/itsCheney/StashConfig/Icons/Japan-resident.png
+🏠RES = select, 家宽节点, img-url = https://cdn.jsdelivr.net/gh/itsCheney/StashConfig/Icons/Resident.png
+
+[Rule]
+# Local RULE
+# Type:DOMAIN-SUFFIX,DOMAIN,DOMAIN-KEYWORD,USER-AGENT,URL-REGEX,IP-CIDR
+# Strategy:DIRECT,Proxy,REJECT
+# Options:no-resolve(no-resolve(only for cidr))
+# GeoIP China
+DOMAIN,upos-hz-mirrorakam.akamaized.net,DIRECT
+DOMAIN,services.googleapis.cn,DIRECT
+GEOIP,NETFLIX,Netflix,no-resolve
+GEOIP,GOOGLE,Google,no-resolve
+GEOIP,TELEGRAM,Telegram,no-resolve
+GEOIP,CN,DIRECT,no-resolve
+GEOIP,LAN,DIRECT,no-resolve
+GEOIP,PRIVATE,DIRECT,no-resolve
+DST-PORT,22,SSH
+FINAL,Proxy
+
+[Remote Rule]
+# Remote Rule
+# 订阅规则URL,策略
+# PROXY
+https://adrules.top/adrules.list,policy=Advertising,enabled=true
+https://ruleset.skk.moe/Clash/non_ip/sogouinput.txt,policy=SogouInput,enabled=true
+https://raw.githubusercontent.com/itsCheney/StashConfig/refs/heads/main/ConvertedRules/cdn.txt,policy=Proxy,enabled=true
+https://ruleset.skk.moe/Clash/non_ip/cdn.txt,policy=Proxy,enabled=true
+https://ruleset.skk.moe/Clash/non_ip/ai.txt,policy=AI,enabled=true
+https://cdn.jsdelivr.net/gh/powerfullz/override-rules@master/ruleset/TikTok.list,policy=🇯🇵JP-R,enabled=true
+https://cdn.jsdelivr.net/gh/powerfullz/override-rules@master/ruleset/EHentai.list,policy=E-Hentai,enabled=true
+https://cdn.jsdelivr.net/gh/powerfullz/override-rules@master/ruleset/SteamFix.list,policy=DIRECT,enabled=true
+https://cdn.jsdelivr.net/gh/powerfullz/override-rules@master/ruleset/FirebaseCloudMessaging.list,policy=DIRECT,enabled=true
+https://cdn.jsdelivr.net/gh/powerfullz/override-rules@master/ruleset/AdditionalFilter.list,policy=Proxy,enabled=true
+https://cdn.jsdelivr.net/gh/powerfullz/override-rules@master/ruleset/AdditionalCDNResources.list,policy=Proxy,enabled=true
+https://ruleset.skk.moe/Clash/domainset/speedtest.txt,policy=SpeedTest,enabled=true
+https://cdn.jsdelivr.net/gh/itsCheney/StashConfig/RuleSet/Paga.list,policy=🇳🇬NG,enabled=true
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/WeChat/WeChat.list,policy=DIRECT,enabled=true
+https://cdn.jsdelivr.net/gh/itsCheney/StashConfig/RuleSet/Brokers.list,policy=DIRECT,enabled=true
+https://cdn.jsdelivr.net/gh/itsCheney/StashConfig/RuleSet/HKBank.list,policy=DIRECT,enabled=true
+https://cdn.jsdelivr.net/gh/itsCheney/StashConfig/RuleSet/USCarrier.list,policy=🇺🇸US-R,enabled=true
+https://cdn.jsdelivr.net/gh/itsCheney/StashConfig/RuleSet/Bilibili.list,policy=Bilibili,enabled=true
+https://surge.bojin.co/geosite/duolingo,policy=Proxy,enabled=true
+https://surge.bojin.co/geosite/bing,policy=Bing,enabled=true
+https://surge.bojin.co/geosite/paypal@cn,policy=DIRECT,enabled=true
+https://surge.bojin.co/geosite/paypal,policy=🇺🇸US-R,enabled=true
+https://surge.bojin.co/geosite/google-play@cn,policy=DIRECT,enabled=true
+https://surge.bojin.co/geosite/apple@cn,policy=DIRECT,enabled=true
+https://surge.bojin.co/geosite/apple,policy=Apple,enabled=true
+https://surge.bojin.co/geosite/telegram,policy=Telegram,enabled=true
+https://surge.bojin.co/geosite/youtube@cn,policy=DIRECT,enabled=true
+https://surge.bojin.co/geosite/youtube,policy=YouTube,enabled=true
+https://surge.bojin.co/geosite/google,policy=Google,enabled=true
+https://surge.bojin.co/geosite/netflix,policy=Netflix,enabled=true
+https://surge.bojin.co/geosite/spotify,policy=Spotify,enabled=true
+https://surge.bojin.co/geosite/twitter,policy=Twitter(X),enabled=true
+https://surge.bojin.co/geosite/bahamut,policy=Bahamut,enabled=true
+https://surge.bojin.co/geosite/category-dev,policy=DeveloperResource,enabled=true
+https://surge.bojin.co/geosite/category-porn,policy=PornSite,enabled=true
+https://surge.bojin.co/geosite/category-games@cn,policy=DIRECT,enabled=true
+https://surge.bojin.co/geosite/category-games,policy=GamePlatform,enabled=true
+https://surge.bojin.co/geosite/category-scholar-!cn,policy=AcademicResource,enabled=true
+https://surge.bojin.co/geosite/category-scholar-cn,policy=DIRECT,enabled=true
+https://surge.bojin.co/geosite/category-cryptocurrency,policy=Crypto,enabled=true
+https://surge.bojin.co/geosite/microsoft@cn,policy=DIRECT,enabled=true
+https://surge.bojin.co/geosite/microsoft,policy=Microsoft,enabled=true
+https://surge.bojin.co/geosite/pikpak,policy=PikPak,enabled=true
+https://surge.bojin.co/geosite/cn,policy=DIRECT,enabled=true
+https://surge.bojin.co/geosite/private,policy=DIRECT,enabled=true
+
+[Rewrite]
+
+[Remote Rewrite]
+
+
+[Host]
+
+
+[Script]
+generic script-path=https://raw.githubusercontent.com/Loon0x00/LoonExampleConfig/master/Script/generic_example.js,tag=GeoLocation,timeout=10,img-url=location.fill.viewfinder.system
+
