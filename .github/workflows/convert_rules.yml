@@ -13,6 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     
 
+    permissions:
+      contents: write
+
     strategy:
       matrix:
         url:
@@ -33,10 +36,8 @@ jobs:
 
       - name: Run rule conversion script for ${{ matrix.url }}
         env:
-          # 将环境变量的值设置为矩阵中当前的URL
           CLASH_DOMAINS_URL: ${{ matrix.url }}
         run: python ./.github/workflows/ClashRulesConverter.py
-
 
       - name: Commit and push if changed
         run: |
@@ -47,7 +48,6 @@ jobs:
           
           git add ConvertedRules/
           
-          # 检查是否有文件变动
           if [ -z "$(git status --porcelain)" ]; then
             echo "规则无变化，无需提交。"
           else
