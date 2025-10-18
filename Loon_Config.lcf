@@ -54,10 +54,10 @@ Subs = https://example/server-complete.txt
 
 [Proxy Group]
 # 节点选项
-Proxy = Select1, Select2, 🇭🇰HK, 🇲🇴MO, 🇹🇼TW, 🇺🇸US, 🇬🇧UK, 🇯🇵JP, 🇰🇷KR, 🇸🇬SG, 🇩🇪DE, 🇫🇷FR, 🇨🇦CA, 🇳🇬NG, 🇺🇸US-R, 🇯🇵JP-R, 🏠RES, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Proxy.png
+Proxy = select, Select1, Select2, 🇭🇰HK, 🇲🇴MO, 🇹🇼TW, 🇺🇸US, 🇬🇧UK, 🇯🇵JP, 🇰🇷KR, 🇸🇬SG, 🇩🇪DE, 🇫🇷FR, 🇨🇦CA, 🇳🇬NG, 🇺🇸US-R, 🇯🇵JP-R, 🏠RES, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Proxy.png
 Select1 = select, Subs, img-url = https://cdn.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/select.png
 Select2 = select, 🇭🇰HK, 🇲🇴MO, 🇹🇼TW, 🇺🇸US, 🇬🇧UK, 🇯🇵JP, 🇰🇷KR, 🇸🇬SG, 🇩🇪DE, 🇫🇷FR, 🇨🇦CA, 🇳🇬NG, 🇺🇸US-R, 🇯🇵JP-R, 🏠RES, img-url = https://cdn.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/select.png
-AI = 🇺🇸US-R, 🇯🇵JP-R, 🏠RES, DIRECT, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Bot.png
+AI = select, 🇺🇸US-R, 🇯🇵JP-R, 🏠RES, DIRECT, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Bot.png
 Crypto = select, Proxy, Select1, Select2, DIRECT, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Cryptocurrency_3.png
 Telegram = select, Proxy, 🇸🇬SG, 🇺🇸US, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Telegram.png
 Microsoft = select, Proxy, Select1, Select2, DIRECT, img-url = https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Microsoft.png
@@ -109,7 +109,7 @@ GEOIP,TELEGRAM,Telegram,no-resolve
 GEOIP,CN,DIRECT,no-resolve
 GEOIP,LAN,DIRECT,no-resolve
 GEOIP,PRIVATE,DIRECT,no-resolve
-DST-PORT,22,SSH
+DEST-PORT,22,SSH
 FINAL,Proxy
 
 [Remote Rule]
