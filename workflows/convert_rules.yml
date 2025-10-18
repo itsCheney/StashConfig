@@ -1,4 +1,4 @@
-name: Convert Clash CDN Domain Rules from URL
+name: Convert Multiple Clash Domain Rules from URLs
 
 on:
   push:
@@ -11,6 +11,14 @@ on:
 jobs:
   build-and-commit:
     runs-on: ubuntu-latest
+    
+
+    strategy:
+      matrix:
+        url:
+          - 'https://ruleset.skk.moe/Clash/domainset/cdn.txt'
+      fail-fast: false 
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -23,26 +31,27 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Run rule conversion script
+      - name: Run rule conversion script for ${{ matrix.url }}
         env:
-          CLASH_DOMAINS_URL: 'https://ruleset.skk.moe/Clash/domainset/cdn.txt'
+          # 将环境变量的值设置为矩阵中当前的URL
+          CLASH_DOMAINS_URL: ${{ matrix.url }}
         run: python convert.py
 
-      # 步骤 5: 提交生成的文件
+      # 注意：因为每个任务是独立运行的，所以提交步骤也需要包含在任务内。
+      # 这意味着每个URL的规则更新会触发一次单独的提交。
       - name: Commit and push if changed
         run: |
+          FILENAME=$(basename "${{ matrix.url }}")
+          
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
-          # 将 git add 的路径更新为你在 Python 脚本中定义的路径
-          git add ConvertedRules/CDN.txt
+          git add ConvertedRules/
           
           # 检查是否有文件变动
           if [ -z "$(git status --porcelain)" ]; then
             echo "规则无变化，无需提交。"
           else
-            # 清理旧文件（如果存在）
-            git rm --cached merged_rules.txt > /dev/null 2>&1 || true
-            git commit -m "docs(rules): 自动更新域名规则并存放至指定目录"
+            git commit -m "docs(rules): 自动更新规则: $FILENAME"
             git push
           fi
