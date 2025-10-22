@@ -3241,6 +3241,7 @@ DOMAIN-SUFFIX,flagcdn.com
 DOMAIN-SUFFIX,flaglog.com
 DOMAIN-SUFFIX,flagpedia.net
 DOMAIN-SUFFIX,flk-ipfs.xyz
+DOMAIN-SUFFIX,flsrv.net
 DOMAIN-SUFFIX,fmcdn.net
 DOMAIN-SUFFIX,fncstatic.com
 DOMAIN-SUFFIX,fontawesome.com
