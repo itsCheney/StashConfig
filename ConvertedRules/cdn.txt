@@ -538,6 +538,7 @@ DOMAIN,cdn.datdota.com
 DOMAIN,cdn.db-ip.com
 DOMAIN,cdn.db.io
 DOMAIN,cdn.decrypt.co
+DOMAIN,cdn.decrypt.day
 DOMAIN,cdn.delight-vr.com
 DOMAIN,cdn.designerapp.osi.office.net
 DOMAIN,cdn.designsystem.arm.com
@@ -1015,6 +1016,7 @@ DOMAIN,cms-assets.xboxservices.com
 DOMAIN,cms-cdn.goat.com
 DOMAIN,cms-cdn.now.gg
 DOMAIN,cms.blavity.com
+DOMAIN,cms.myfonts.com
 DOMAIN,cms.recordedfuture.com
 DOMAIN,cms.therecord.media
 DOMAIN,cms.typenetwork.com
@@ -1322,6 +1324,7 @@ DOMAIN,heroicons.com
 DOMAIN,hhhhhhome86227170.wordpress.com
 DOMAIN,himeko.iwara.tv
 DOMAIN,hips.hearstapps.com
+DOMAIN,hiveplayer-static.bamgrid.com
 DOMAIN,hls.hentaicity.com
 DOMAIN,home.integrate.com
 DOMAIN,hp.foxnews.com
@@ -1338,6 +1341,7 @@ DOMAIN,i.dailymail.co.uk
 DOMAIN,i.gawby.com
 DOMAIN,i.geekflare.com
 DOMAIN,i.giphy.com
+DOMAIN,i.git99.com
 DOMAIN,i.guim.co.uk
 DOMAIN,i.gzn.jp
 DOMAIN,i.hamreus.com
@@ -2053,6 +2057,7 @@ DOMAIN,polyfill-fe.toss.im
 DOMAIN,polyfill.bbhub.io
 DOMAIN,pomf2.lain.la
 DOMAIN,pool.jortage.com
+DOMAIN,pp-static.monotype.com
 DOMAIN,pplx-next-static-public.perplexity.ai
 DOMAIN,pplx-res.cloudinary.com
 DOMAIN,pptstatic.iyf.tv
@@ -2268,6 +2273,7 @@ DOMAIN,secure.fanboy.co.nz
 DOMAIN,secure.telegraph.co.uk
 DOMAIN,segapi.clerk.com
 DOMAIN,segment.digitalocean.com
+DOMAIN,sellon.shiprocket.in
 DOMAIN,sentry.ainopara.com
 DOMAIN,seo-wp.airdroid.com
 DOMAIN,sequoia.cdn-apple.com
@@ -2317,6 +2323,7 @@ DOMAIN,speedmedia2.jfrog.com
 DOMAIN,spoprod-a.akamaihd.net
 DOMAIN,spotlightimage.biggo.com
 DOMAIN,sprig.figma.com
+DOMAIN,sr-cdn-1.shiprocket.in
 DOMAIN,ss7.vzw.com
 DOMAIN,ssl.gstatic.com
 DOMAIN,st-eu.dynamicyield.com
@@ -2392,6 +2399,7 @@ DOMAIN,static-sv.fc2.com
 DOMAIN,static-us.afterpay.com
 DOMAIN,static-web-prod.skillshare.com
 DOMAIN,static-web.grammarly.com
+DOMAIN,static-webfonts.myfonts.com
 DOMAIN,static-www.onlyoffice.com
 DOMAIN,static.3dporndude.com
 DOMAIN,static.4shared.com
@@ -2551,6 +2559,7 @@ DOMAIN,static.onlyfans.com
 DOMAIN,static.oomol.com
 DOMAIN,static.openreplay.com
 DOMAIN,static.opensea.io
+DOMAIN,static.opensuse.org
 DOMAIN,static.oracle.com
 DOMAIN,static.parallels.com
 DOMAIN,static.peatio.com
@@ -3392,6 +3401,7 @@ DOMAIN-SUFFIX,i-dont-care-about-cookies.eu
 DOMAIN-SUFFIX,i.optimole.com
 DOMAIN-SUFFIX,ibytedtos.com
 DOMAIN-SUFFIX,ibyteimg.com
+DOMAIN-SUFFIX,icfcdn.com
 DOMAIN-SUFFIX,icon.horse
 DOMAIN-SUFFIX,iframe.ly
 DOMAIN-SUFFIX,iggcdn.com
@@ -3637,6 +3647,7 @@ DOMAIN-SUFFIX,npm.io
 DOMAIN-SUFFIX,npmcdn.com
 DOMAIN-SUFFIX,npmfs.com
 DOMAIN-SUFFIX,npms.io
+DOMAIN-SUFFIX,nsimg.net
 DOMAIN-SUFFIX,nv7s.com
 DOMAIN-SUFFIX,nxcli.io
 DOMAIN-SUFFIX,nxedge.io
