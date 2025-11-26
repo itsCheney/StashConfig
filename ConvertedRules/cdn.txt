@@ -1446,6 +1446,7 @@ DOMAIN,image.thefly.com
 DOMAIN,image.tmdb.org
 DOMAIN,image.vuukle.com
 DOMAIN,image.westinyou.com
+DOMAIN,image.xmanhua.net
 DOMAIN,image.yuntu.com.tw
 DOMAIN,imagecdn.clips4sale.com
 DOMAIN,imagehost.player.fm
@@ -1533,6 +1534,7 @@ DOMAIN,images.whoer.com
 DOMAIN,images.wikia.com
 DOMAIN,images.wsj.net
 DOMAIN,images.wsjcommerce.net
+DOMAIN,images.wurstclient.net
 DOMAIN,images.youracclaim.com
 DOMAIN,images1.cmp.optimizely.com
 DOMAIN,images1.vinted.net
@@ -2109,6 +2111,7 @@ DOMAIN,public-img.mewe.com
 DOMAIN,public-pages.cbinsights.com
 DOMAIN,public.flourish.studio
 DOMAIN,public.hare200.com
+DOMAIN,public.komiic.com
 DOMAIN,public.linear.app
 DOMAIN,public.mocortech.com
 DOMAIN,public.saasexch.com
