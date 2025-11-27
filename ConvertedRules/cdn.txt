@@ -1076,6 +1076,8 @@ DOMAIN,conversiongorilla.com
 DOMAIN,cookie-cdn.cookiepro.com
 DOMAIN,corp-backend.brevo.com
 DOMAIN,cors-proxy.htmldriven.com
+DOMAIN,cover.comicbz.com
+DOMAIN,cover.yymanhua.com
 DOMAIN,covers.openlibrary.org
 DOMAIN,cpwebassets.codepen.io
 DOMAIN,craftassets.unraid.net
@@ -1092,7 +1094,9 @@ DOMAIN,csp.microsoft.com
 DOMAIN,css-1-cdn.airdroid.com
 DOMAIN,css.4jpg.top
 DOMAIN,css.blackmagicdesign.com
+DOMAIN,css.comicbz.com
 DOMAIN,css.createsend1.com
+DOMAIN,css.yymanhua.com
 DOMAIN,curl.se
 DOMAIN,cw-image-resizer.cwg.tw
 DOMAIN,cwsimages.ingramcontent.com
@@ -1420,6 +1424,7 @@ DOMAIN,image.acg.lol
 DOMAIN,image.ap-mail.org
 DOMAIN,image.civitai.com
 DOMAIN,image.cnbcfm.com
+DOMAIN,image.comicbz.com
 DOMAIN,image.crisp.chat
 DOMAIN,image.dooo.ng
 DOMAIN,image.email.microsoftemail.com
@@ -1448,6 +1453,7 @@ DOMAIN,image.vuukle.com
 DOMAIN,image.westinyou.com
 DOMAIN,image.xmanhua.net
 DOMAIN,image.yuntu.com.tw
+DOMAIN,image.yymanhua.com
 DOMAIN,imagecdn.clips4sale.com
 DOMAIN,imagehost.player.fm
 DOMAIN,imageio.forbes.com
@@ -2470,6 +2476,7 @@ DOMAIN,static.codepen.io
 DOMAIN,static.cohere.so
 DOMAIN,static.coinall.ltd
 DOMAIN,static.coingecko.com
+DOMAIN,static.comicbz.com
 DOMAIN,static.community.workday.com
 DOMAIN,static.convertio.co
 DOMAIN,static.corp.google.com
