@@ -1900,6 +1900,7 @@ DOMAIN,media.giphy.com
 DOMAIN,media.graphassets.com
 DOMAIN,media.hachyderm.io
 DOMAIN,media.hentaifreak.org
+DOMAIN,media.identity.ui.com
 DOMAIN,media.infosec.exchange
 DOMAIN,media.inhumanity.com
 DOMAIN,media.invisioncic.com
