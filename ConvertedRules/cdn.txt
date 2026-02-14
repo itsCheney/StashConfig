@@ -460,6 +460,7 @@ DOMAIN,cdn-media-1.freecodecamp.org
 DOMAIN,cdn-media-2.freecodecamp.org
 DOMAIN,cdn-mobile.aptoide.com
 DOMAIN,cdn-node.diskpart.com
+DOMAIN,cdn-nsbus.ui.com
 DOMAIN,cdn-public-apis.moonlock.com
 DOMAIN,cdn-public.sociabble.com
 DOMAIN,cdn-raw.modrinth.com
