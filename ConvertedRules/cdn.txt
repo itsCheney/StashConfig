@@ -3225,6 +3225,7 @@ DOMAIN,www.10086.win
 DOMAIN,www.acgpix.de
 DOMAIN,www.bbthat.com
 DOMAIN,www.envoyproxy.io
+DOMAIN,www.fumadocs.dev
 DOMAIN,www.gstatic.com
 DOMAIN,www.pngmart.com
 DOMAIN,www.tbstat.com
