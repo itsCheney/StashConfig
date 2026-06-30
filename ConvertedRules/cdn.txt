@@ -1097,6 +1097,7 @@ DOMAIN,cf.javfree.me
 DOMAIN,cf.mhgui.com
 DOMAIN,cf.shopee.tw
 DOMAIN,cfvod.kaltura.com
+DOMAIN,changelog-widget.canny.io
 DOMAIN,chart.googleapis.com
 DOMAIN,chat-assets.front.app
 DOMAIN,chat.digitalgenius.com
@@ -3274,6 +3275,7 @@ DOMAIN,widget.intercom.io
 DOMAIN,widget.kapa.ai
 DOMAIN,widget.prod.equally.ai
 DOMAIN,widget.reviews.io
+DOMAIN,widget.rss.app
 DOMAIN,widget.trustpilot.com
 DOMAIN,widget.usepylon.com
 DOMAIN,widget.user.com
