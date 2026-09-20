@@ -739,6 +739,7 @@ DOMAIN,cdn.imago-images.com
 DOMAIN,cdn.img.ly
 DOMAIN,cdn.imgchest.com
 DOMAIN,cdn.infoq.com
+DOMAIN,cdn.infrawire.net
 DOMAIN,cdn.insightmediagroup.io
 DOMAIN,cdn.inviter.co
 DOMAIN,cdn.ionos.de
@@ -1018,6 +1019,7 @@ DOMAIN,cdn1.hotmoza.tv
 DOMAIN,cdn1.iconfinder.com
 DOMAIN,cdn1.identitymind.com
 DOMAIN,cdn1.plesk.com
+DOMAIN,cdn1.singteldigital.com
 DOMAIN,cdn1.stamped.io
 DOMAIN,cdn1.suno.ai
 DOMAIN,cdn1.sysgears.com
@@ -1973,6 +1975,7 @@ DOMAIN,jotai.org
 DOMAIN,js-1-cdn.airdroid.com
 DOMAIN,js-eu1.hsforms.net
 DOMAIN,js-s3.quickcep.com
+DOMAIN,js.arcgis.com
 DOMAIN,js.assemblyexchange.com
 DOMAIN,js.braintreegateway.com
 DOMAIN,js.chargebee.com
@@ -3198,6 +3201,7 @@ DOMAIN,tiles1.planet.com
 DOMAIN,tiles2.mapiful.com
 DOMAIN,tiles2.planet.com
 DOMAIN,tiles3.planet.com
+DOMAIN,tileserver.b10s.net
 DOMAIN,tileserver.gnome.org
 DOMAIN,tileserver.memomaps.de
 DOMAIN,time-a.nist.gov
