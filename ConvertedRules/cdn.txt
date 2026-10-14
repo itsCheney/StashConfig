@@ -1731,6 +1731,7 @@ DOMAIN,images.kick.com
 DOMAIN,images.klipfolio.com
 DOMAIN,images.loox.io
 DOMAIN,images.macrumors.com
+DOMAIN,images.macworld.co.uk
 DOMAIN,images.mathworks.com
 DOMAIN,images.mattel.net
 DOMAIN,images.microcms-assets.io
